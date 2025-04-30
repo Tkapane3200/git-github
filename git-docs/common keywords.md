@@ -1,161 +1,199 @@
 🔹 Common Git Keywords & Their Meaning
 
-    init (Initialize)
+1. init (Initialize)
 
-    Used in git init It creates a new Git repository in the current directory.
-
+    Used in ```git init```
+    It creates a new Git repository in the current directory.
+   
     Example: git init initializes an empty Git repository.
 
-    clone (Copy a Repository)
+2. clone (Copy a Repository)
 
-    Used in git clone <repo_url> It downloads an existing repository from a remote source (e.g., GitHub) to your local machine.
-
+    Used in ```git clone <repo_url>```
+    It downloads an existing repository from a remote source (e.g., GitHub) to your local machine.
+   
     Example: git clone https://github.com/user/repo.git
 
-    status (Show Current State)
+3. status (Show Current State)
 
-    Used in git status It shows the status of files (modified, staged, committed, etc.).
-
+    Used in ```git status```
+    It shows the status of files (modified, staged, committed, etc.).
+   
     Example: git status tells you which files are changed but not committed.
 
-    add (Stage Changes)
+4. add (Stage Changes)
 
-    Used in git add <file> or git add . It adds files to the staging area, preparing them for commit.
+    Used in ```git add <file> ```or ```git add .```
+    It adds files to the staging area, preparing them for commit.
+   
+    Example:
+        git add file1.txt → Adds only file1.txt
+        git add . → Adds all modified files
 
-    Example: git add file1.txt → Adds only file1.txt git add . → Adds all modified files
+5. commit (Save Changes)
 
-    commit (Save Changes)
-
-    Used in git commit -m "message" It saves changes in Git history with a commit message.
-
+    Used in ```git commit -m "message"```
+    It saves changes in Git history with a commit message.
+   
     Example: git commit -m "Added new feature"
 
-    log (View History)
+6. log (View History)
 
-    Used in git log It shows a history of commits in the repository.
+    Used in ```git log```
+    It shows a history of commits in the repository.
+    
+    Example:
+        git log → Shows detailed commit history
+        git log --oneline → Shows a shorter version
 
-    Example: git log → Shows detailed commit history git log --oneline → Shows a shorter version
+7. branch (Work on Different Versions)
 
-    branch (Work on Different Versions)
+    Used in ```git branch <branch_name>```
+    It creates or lists branches in the project.
+    
+    Example:
+        git branch → Shows all branches
+        git branch feature-1 → Creates a new branch named feature-1
 
-    Used in git branch <branch_name> It creates or lists branches in the project.
+8. checkout (Switch Branches or Restore Files)
 
-    Example: git branch → Shows all branches git branch feature-1 → Creates a new branch named feature-1
+    Used in ```git checkout <branch_name>```
+    It switches between different branches.
+    
+    Example: git checkout main → Switches to the main branch.
+    It can also be used to restore files:
+        git checkout -- file1.txt → Discards changes in file1.txt
 
-    checkout (Switch Branches or Restore Files)
+9. merge (Combine Branches)
 
-    Used in git checkout <branch_name> It switches between different branches.
+    Used in ```git merge <branch_name>```
+    It combines changes from another branch into the current branch.
+    
+    Example:
+        git merge feature-1 → Merges feature-1 into the current branch.
 
-    Example: git checkout main → Switches to the main branch. It can also be used to restore files: git checkout -- file1.txt → Discards changes in file1.txt
+10. push (Upload to Remote Repository)
 
-    merge (Combine Branches)
-
-    Used in git merge <branch_name> It combines changes from another branch into the current branch.
-
-    Example: git merge feature-1 → Merges feature-1 into the current branch.
-
-    push (Upload to Remote Repository)
-
-    Used in git push origin <branch_name> It uploads commits from your local repository to the remote (GitHub, GitLab, etc.).
-
+    Used in ```git push origin <branch_name>```
+    It uploads commits from your local repository to the remote (GitHub, GitLab, etc.).
+    
     Example: git push origin main → Uploads the main branch to remote.
 
-    pull (Download & Merge Changes)
+11. pull (Download & Merge Changes)
 
-    Used in git pull origin <branch_name> It fetches the latest changes from the remote repo and merges them into your local branch.
-
+    Used in ```git pull origin <branch_name>```
+    It fetches the latest changes from the remote repo and merges them into your local branch.
+    
     Example: git pull origin main
 
-    fetch (Download Changes Without Merging)
+12. fetch (Download Changes Without Merging)
 
-    Used in git fetch It downloads changes from the remote repository but doesn’t merge them. Example: git fetch origin
+    Used in ```git fetch```
+    It downloads changes from the remote repository but doesn’t merge them.
+    Example: git fetch origin
 
-    reset (Undo Changes)
+13. reset (Undo Changes)
 
-    Used in git reset It removes commits or unstages files.
+    Used in ```git reset```
+    It removes commits or unstages files.
+    
+    Examples:
+        git reset HEAD~1 → Removes the last commit but keeps the changes
+        git reset --hard HEAD~1 → Completely removes the last commit and changes
 
-    Examples: git reset HEAD1 → Removes the last commit but keeps the changes git reset --hard HEAD1 → Completely removes the last commit and changes
+14. revert (Undo a Commit with a New Commit)
 
-    revert (Undo a Commit with a New Commit)
-
-    Used in git revert <commit_hash> It undoes a specific commit by creating a new commit that cancels out the previous one.
-
+    Used in ```git revert <commit_hash>```
+    It undoes a specific commit by creating a new commit that cancels out the previous one.
+    
     Example: git revert abc123 → Reverts the commit with ID abc123
 
-    stash (Save Work Temporarily)
+15. stash (Save Work Temporarily)
 
-    Used in git stash It saves your uncommitted changes temporarily and restores a clean working directory.
+    Used in ```git stash```
+    It saves your uncommitted changes temporarily and restores a clean working directory.
+    
+    Example:
+        git stash → Stashes current changes
+        git stash pop → Applies the last stashed changes
 
-    Example: git stash → Stashes current changes git stash pop → Applies the last stashed changes
+16. cherry-pick (Copy a Specific Commit to Another Branch)
 
-    cherry-pick (Copy a Specific Commit to Another Branch)
-
-    Used in git cherry-pick <commit_hash> It applies a specific commit from another branch without merging the whole branch.
-
+    Used in ```git cherry-pick <commit_hash>```
+    It applies a specific commit from another branch without merging the whole branch.
+    
     Example: git cherry-pick abc123 → Applies commit abc123
 
-    rebase (Rewrite Commit History)
+17. rebase (Rewrite Commit History)
 
-    Used in git rebase <branch_name> It moves commits from one branch onto another, cleaning up history.
-
+    Used in ```git rebase <branch_name>```
+    It moves commits from one branch onto another, cleaning up history.
+    
     Example: git rebase main
 
-    tag (Label a Version)
+18. tag (Label a Version)
 
-    Used in git tag <tag_name> It marks a specific commit as a release version.
-
+    Used in ```git tag <tag_name>```
+    It marks a specific commit as a release version.
+    
     Example: git tag v1.0
 
-    clean (Remove Untracked Files)
+19. clean (Remove Untracked Files)
 
-    Used in git clean -f It removes untracked files from the working directory.
-
+    Used in ```git clean -f```
+    It removes untracked files from the working directory.
+    
     Example: git clean -n (preview) → git clean -f (force delete)
 
-    remote (Manage Remote Repositories)
+20. remote (Manage Remote Repositories)
 
-    Used in git remote It manages connections to remote repositories like GitHub.
+    Used in ```git remote```
+    It manages connections to remote repositories like GitHub.
+    
+    Example:
+        git remote -v → Lists remote repositories
+        git remote add origin <url> → Adds a remote repository
 
-    Example: git remote -v → Lists remote repositories git remote add origin → Adds a remote repository
 
 🔹 Summary Table
 
-init: Initialize a repository
+init:	      Initialize a repository
 
-clone: Copy a repository from remote
+clone:	      Copy a repository from remote
 
-status: Show current file status
+status:	      Show current file status
 
-add: Stage files for commit
+add:	      Stage files for commit
 
-commit: Save changes to the repository
+commit:	      Save changes to the repository
 
-log: View commit history
+log:	      View commit history
 
-branch: Create or list branches
+branch:	      Create or list branches
 
-checkout: Switch branches or restore files
+checkout:     Switch branches or restore files
 
-merge: Combine branches
+merge:	      Combine branches
 
-push: Upload changes to remote repo
+push:	      Upload changes to remote repo
 
-pull: Download and merge remote changes
+pull:	      Download and merge remote changes
+ 
+fetch:	      Download changes without merging
 
-fetch: Download changes without merging
+reset:	      Undo changes
 
-reset: Undo changes
+revert:	      Undo a commit with a new commit
 
-revert: Undo a commit with a new commit
+stash:	      Save changes temporarily
 
-stash: Save changes temporarily
+cherry-pick:  Apply a specific commit
 
-cherry-pick: Apply a specific commit
+rebase:	      Rewrite commit history
 
-rebase: Rewrite commit history
+tag:	      Mark a version
 
-tag: Mark a version
+clean:	      Remove untracked files
 
-clean: Remove untracked files
+remote:	      Manage remote repositories    
 
-remote: Manage remote repositories
